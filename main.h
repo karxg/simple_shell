@@ -5,12 +5,23 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdint.h>
+#include <stdbool.h>
+#include <signal.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <errno.h>
+
+
 
 int _strlen(const char *s);
 char *_strcpy(char *dest, char *src);
 char *_strdup(const char *str);
 char *_strjoin(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
+void _puts(char *);
+int _putchar(char);
+void _putserr(char *);
+int _putcharerr(char);
 
 /**
 *struct builtin - contains a builtin string and related function
