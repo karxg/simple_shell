@@ -1,17 +1,19 @@
 # Shell Pseudocode Draft
-* * *
- initialize the shell structure to store arguments information
- populate structure to store environment related information
- execute the shell program with the provided command line arguments
+```
+    initialize the shell structure to store arguments information
 
- loop until the user exits or encounters an error:
-     reset the internal state of the shell
-     if the shell is operating in interactive mode:
+    populate structure to store environment related information
+
+    execute the shell program with the provided command line arguments
+
+    loop until the user exits or encounters an error:
+    reset the internal state of the shell
+    if the shell is operating in interactive mode:
          display the shell prompt ($)
-     flush the output buffer
+    flush the output buffer
 
-     read user input
-     if the input is not empty:
+    read user input
+    if the input is not empty:
          prepare the internal state for command execution
          check if the command/*Pesudo-code*/ is a built-in function
          if it's not a built-in function:
@@ -31,4 +33,5 @@
      	else:
          	exit the program with the error code
  exit the program with a success status
+```
 
