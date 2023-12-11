@@ -78,3 +78,46 @@ char *_strdup(const char *str)
 	result[len] = '\0';
 	return (result);
 }
+/**
+* _strjoin - concatenates two strings
+* @dest: pointer to the destination buffer
+* @src: pointer to the source buffer
+* Return: pointer to the beginning of the destination buffer.
+*
+* Description: Concatenates the string pointed to by @src to the end of
+* the string pointed to by @dest. Returns a pointer to the
+* beginning of the modified @dest buffer.
+*/
+
+char *_strjoin(char *dest, char *src)
+{
+    char *result = dest;
+
+    while (*dest)
+        dest++;
+
+    for (; (*dest = *src); dest++, src++)
+        ;
+    return (result);
+}
+
+/**
+* _strcmp - compares two strings
+* @s1: pointer to the first string
+* @s2: pointer to the second string
+* Return: result of the comparison
+*
+* Description: Compares the strings pointed to by @s1 and @s2. Returns the
+* result of the comparison: 0 if equal, a positive value if
+* @s1 is greater, and a negative value if @s2 is greater.
+*/
+
+int _strcmp(char *s1, char *s2)
+{
+    while (*s1 && (*s1 == *s2))
+    {
+        s1++;
+        s2++;
+    }
+    return (*s1 - *s2);
+}
