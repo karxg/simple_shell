@@ -22,21 +22,15 @@ void _puts(char *);
 int _putchar(char);
 void _putserr(char *);
 int _putcharerr(char);
-
-/**
-*struct builtin - contains a builtin string and related function
-*@cmd: string representing the built-in command
-*@handler: function pointer to the corresponding handler function
-*/
-typedef struct builtin
-{
-	char *cmd;
-	int (*handler)(arginfo *);
-} builtin;
-
-int _isbuilt(arginfo *);
-void _getcmd(arginfo *);
-void _forkcmd(arginfo *);
+char **_strsplit(char *, char *);
+char *_dupchars(char *, int, int);
+char *_checkprefix(const char *, const char *);
+int _checkdelim(char, char *);
+int _atoi(char *);
+char *_fillmem(char *, char, unsigned int);
+void _freearray(char **);
+int _freepointer(void **);
+void _checksigint(int);
 
 
 /**
@@ -101,6 +95,20 @@ typedef struct arginfo
 	int rfd;
 } arginfo;
 
+/**
+*struct builtin - contains a builtin string and related function
+*@cmd: string representing the built-in command
+*@handler: function pointer to the corresponding handler function
+*/
+typedef struct builtin
+{
+	char *cmd;
+	int (*handler)(arginfo *);
+} builtin;
+
+int _isbuilt(arginfo *);
+void _getcmd(arginfo *);
+void _forkcmd(arginfo *);
 
 void _forkcmd(arginfo *info);
 int _isbuilt(arginfo *info);
@@ -126,6 +134,11 @@ int _printenv(arginfo *);
 int _envwrapper(arginfo *);
 int _unsetenvwrapper(arginfo *);
 int _fillenv(arginfo *);
+char **_envref(arginfo *);
+int _unsetenv(arginfo *, char *);
+int _setenv(arginfo *, char *, char *);
+ssize_t _getline(arginfo *);
 
+extern char **environ;
 
 #endif

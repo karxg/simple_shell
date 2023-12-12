@@ -22,11 +22,11 @@ int _strlen(const char *s)
 }
 
 /**
- * _strcpy - copies a string
- * @dest: the destination
- * @src: the source
- * Return: pointer to destination
- */
+* _strcpy - copies a string
+* @dest: the destination
+* @src: the source
+* Return: pointer to destination
+*/
 
 char *_strcpy(char *dest, char *src)
 {
@@ -58,6 +58,7 @@ char *_strdup(const char *str)
 {
 
 	int len, i;
+
 	char *result;
 
 	len = 0;
@@ -91,14 +92,14 @@ char *_strdup(const char *str)
 
 char *_strjoin(char *dest, char *src)
 {
-    char *result = dest;
+	char *result = dest;
 
-    while (*dest)
-        dest++;
+	while (*dest)
+		dest++;
 
-    for (; (*dest = *src); dest++, src++)
-        ;
-    return (result);
+	for (; (*dest = *src); dest++, src++)
+		;
+	return (result);
 }
 
 /**
@@ -114,10 +115,10 @@ char *_strjoin(char *dest, char *src)
 
 int _strcmp(char *s1, char *s2)
 {
-    while (*s1 && (*s1 == *s2))
-    {
-        s1++;
-        s2++;
-    }
-    return (*s1 - *s2);
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }

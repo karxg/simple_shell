@@ -7,7 +7,7 @@
     execute the shell program with the provided command line arguments
 
     loop until the user exits or encounters an error:
-    reset the internal state of the shell
+    reset the internal state of the shells
     if the shell is operating in interactive mode:
          display the shell prompt ($)
     flush the output buffer
